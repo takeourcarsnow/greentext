@@ -82,6 +82,7 @@ app.post('/convert', limiter, async (req, res) => {
 8. Include reactions and emotions in greentext style (e.g., ">be me", ">mfw")
 9. End with some kind of reaction or conclusion
 10. Keep formatting simple - no fancy formatting or special characters
+11. Answer in any language that you are prompted in
 
 Example format:
 >be me
