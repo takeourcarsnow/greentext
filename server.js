@@ -23,7 +23,7 @@ const port = process.env.PORT || 3000;
 // Configure Google Generative AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
-    model: 'gemini-pro',
+    model: 'gemini-2.0-flash-exp',
     generationConfig: {
         temperature: 0.7,
         topP: 0.8,
