@@ -99,6 +99,7 @@ Remember:
 - Don't add unrelated scenarios
 - Stay close to the original story
 - Add just 1-2 reactions maximum
+- Answer in any language that you are prompted in
 - Avoid excessive length`;
 
         const result = await model.generateContent(prompt);
