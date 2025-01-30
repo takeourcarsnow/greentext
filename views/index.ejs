@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert your stories into 4chan-style greentext format">
+    <title>/g/ - Greentext Generator</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-switch" aria-label="Toggle theme">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <header class="board-header animate-fade-in">
+            <div class="logo-container">
+                <div class="logo">🐸</div>
+                <h1>/g/ - Greentext Generator</h1>
+            </div>
+        </header>
+
+        <main class="post-container animate-slide-up">
+            <div class="post-form">
+                <div class="input-group">
+                    <textarea 
+                        id="input-text" 
+                        placeholder="Type your story here..." 
+                        class="animate-border"
+                        maxlength="1000"
+                        aria-label="Story input"></textarea>
+                    <div class="char-counter">
+                        <span id="char-count">0</span>/1000
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button id="convert-btn" class="primary-btn">
+                        <i class="fas fa-magic"></i>
+                        Convert to Greentext
+                        <span class="loading-indicator hidden">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                    <button id="clear-btn" class="secondary-btn">
+                        <i class="fas fa-trash"></i>
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div class="thread hidden" id="result-thread">
+                <div class="post">
+                    <div class="post-info">
+                        <span class="anonymous">
+                            <i class="fas fa-user-secret"></i> Anonymous
+                        </span>
+                        <span class="post-number">
+                            No.<span id="post-id"></span>
+                        </span>
+                        <span class="timestamp"></span>
+                    </div>
+                    <div id="greentext-result" class="greentext-content"></div>
+                    <div class="post-actions">
+                        <button id="copy-btn" class="action-btn">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button id="share-btn" class="action-btn">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <div class="history-header">
+                    <h2><i class="fas fa-history"></i> History</h2>
+                    <button id="clear-history-btn" class="secondary-btn">
+                        <i class="fas fa-trash"></i> Clear History
+                    </button>
+                </div>
+                <div id="history-container" class="history-container">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+			<div class="social-buttons">
+    <a href="https://www.patreon.com/your_username" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="patreon-button">
+        <i class="fab fa-patreon"></i>
+        Support on Patreon
+    </a>
+    <a href="https://twitter.com/share?url=https://yourdomain.com&text=Check out this awesome Greentext Generator!" 
+       target="_blank"
+       rel="noopener noreferrer"
+       class="twitter-button"
+       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fab fa-twitter"></i>
+        Share on Twitter
+    </a>
+</div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

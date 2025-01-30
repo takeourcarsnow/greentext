@@ -1,0 +1,31 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "server.js",
+            "use": "@vercel/node",
+            "config": {
+                "nodeVersion": "18.x",
+                "includeFiles": ["views/**", "public/**"]
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "server.js"
+        }
+    ],
+    "env": {
+        "GEMINI_API_KEY": "AIzaSyCGpciACSaERJmQAshsFnuCCURJ-Yj5GiI",
+        "NODE_ENV": "production",
+        "PORT": "3000",
+        "HOST": "0.0.0.0",
+        "CORS_ORIGIN": "*",
+        "RATE_LIMIT_WINDOW": "15",
+        "RATE_LIMIT_MAX": "100",
+        "CACHE_TTL": "3600",
+        "CACHE_CHECK_PERIOD": "600",
+        "LOG_LEVEL": "info"
+    }
+}
